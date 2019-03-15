@@ -1,0 +1,5 @@
+Pyber Data Analysis
+
+-As might be expected, rides are occuring in Urban areas far more than in Rural areas.
+-Rides occur less frequently in Rural areas, however, drivers are paid more on average than for rides in urban areas.
+-Pyber appears to be more popular in Urban areas given that theh number of rides and drivers are greater than suburban and rural areas.
