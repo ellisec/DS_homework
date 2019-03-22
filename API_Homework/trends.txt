@@ -1,0 +1,4 @@
+Trends for API Homework
+-Temperature does appear to increase the closer to 0 latitude
+-Latitude location does not appear to have a correlation to humidity
+-Latitude location does not appear to have a correlation to cloudiness
