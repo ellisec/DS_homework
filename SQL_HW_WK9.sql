@@ -65,6 +65,7 @@ SELECT s.staff_id
 ,SUM(p.amount) AS 'AMOUNT'
 FROM staff s
 JOIN payment p ON p.staff_id = s.staff_id
+WHERE payment_date BETWEEN '2005-08-01 00:00:00' AND '2005-08-31 00:00:00'
 GROUP BY s.staff_id;
 -- 6c. List each film and the number of actors who are listed for that film. Use tables film_actor and film. Use inner join.
 SELECT f.title
