@@ -39,7 +39,7 @@ def scrape():
     
 # # JPL MARS SPACE IMAGES
 
-    
+    browser=init_browser()
 
     # Visit url
     image_url='https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
@@ -52,11 +52,9 @@ def scrape():
 
     #Find URL for featured image
     featured_image_url=soup.find('article')['style'].replace('background-image: url(','').replace(');','')
-
-    #"Unpack URL" - remove ''
+   
     featured_image_url=featured_image_url[1:-1]
-
-    #Base URL
+    
     jpl_url='https://www.jpl.nasa.gov'
 
     #Base URL + Image URL
@@ -75,10 +73,9 @@ def scrape():
     #Visit url
     weather_url='https://twitter.com/marswxreport?lang=en'
     browser.visit(weather_url)
-
     time.sleep(2)
 
-    #Scrape into Soup
+    #Scrape
     weather_html=browser.html
     soup=BeautifulSoup(weather_html,'html.parser')
 
@@ -99,13 +96,11 @@ def scrape():
 
     #Visit url
     facts_url='https://space-facts.com/mars/'
-    
     time.sleep(2)
 
     #Read tables
     tables=pd.read_html(facts_url)
 
-    #Assign variable to first table
     mars_facts_df=tables[0]
     
     #Format table
@@ -132,7 +127,7 @@ def scrape():
 
     time.sleep(2)
 
-    #Scrape into Soup
+    #Scrape
     hemi_html=browser.html
     soup=BeautifulSoup(hemi_html,'html.parser')
 
