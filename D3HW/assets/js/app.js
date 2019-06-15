@@ -67,6 +67,18 @@ d3.csv("assets/data/data.csv")
     .attr("fill", "purple")
     .attr("opacity", ".5");
 
+    var circlesText = chartGroup.selectAll()
+    .data(stateData)
+    .enter()
+    .append("text")
+    .attr("x", d => xLinearScale(d.poverty))
+    .attr("y", d => yLinearScale(d.healthcare) + 3)
+    .text(d => d.abbr)
+    .attr("fill", "#FFFFFF")
+    .style("font-size", "10px")
+    .style("font-weight", "bold")
+    .style("text-anchor", "middle");
+
     // Step 6: Initialize tool tip
     // ==============================
     var toolTip = d3.tip()
